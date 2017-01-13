@@ -4,12 +4,15 @@ import { Provider } from 'react-redux';
 import { createStore } from 'redux';
 import reducers from './reducers';
 
-const App = () => {
-  return (
+import LibraryList from './components/LibraryList';
+import { Header } from './components/common';
+
+const App = () =>
     <Provider store={createStore(reducers)}>
-      <View />
-    </Provider>
-  );
-};
+      <View style={{ flex: 1 }}>
+        <Header headerText="Tech Stack" />
+        <LibraryList />
+      </View>
+    </Provider>;
 
 export default App;
